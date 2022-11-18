@@ -46,7 +46,7 @@ public class Food : MonoBehaviour
         if (!isGrabbed)
         {
             gap = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position) + Vector3.forward * 10;
-            this.GetComponentInChildren<SpriteRenderer>().sortingOrder = 11;
+            //this.GetComponentInChildren<SpriteRenderer>().sortingOrder = 11;
             MouseManager.Instance.targetObject = this.gameObject;
 
             isGrabbed = true;

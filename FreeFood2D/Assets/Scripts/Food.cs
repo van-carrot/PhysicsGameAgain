@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum FoodType
 {
-    square,cicrle,capusle
+    hamburger,bread,hotdog
 }
 
 public class Food : MonoBehaviour
@@ -12,22 +12,27 @@ public class Food : MonoBehaviour
     public bool isGrabbed; 
     public Vector3 gap;
     public FoodType type;
+    public bool isMoving = true;
+    public float spd;
 
     private void OnMouseDrag()
     {
+        isMoving = false;
         ByMouseDrag();
     }
 
     private void OnMouseUp()
     {
         GetComponent<Rigidbody2D>().gravityScale = 1;
-        ResetFoodArea();
+        GetComponent<PolygonCollider2D>().isTrigger = false;
+
+        //ResetFoodArea();
     }
 
-    public void ResetFoodArea()
+/*    public void ResetFoodArea()
     {
         FoodArea foodArea = FindObjectOfType<FoodArea>();
-        if(type == FoodType.square)
+*//*        if(type == FoodType.square)
         {
             foodArea.isSquareOut = true;
         }
@@ -38,8 +43,8 @@ public class Food : MonoBehaviour
         else if(type == FoodType.capusle)
         {
             foodArea.isCapsuleOut = true;
-        }
-    }
+        }*//*
+    }*/
 
     public void ByMouseDrag()
     {
@@ -53,5 +58,22 @@ public class Food : MonoBehaviour
         }
 
         MouseManager.Instance.DragByTheMouse(this.gameObject, -gap);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.tag == "Bowl")
+        {
+
+            Debug.Log("bowl");
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (isMoving)
+        {
+            transform.position += Vector3.left * Time.deltaTime * spd;
+        }
     }
 }

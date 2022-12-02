@@ -153,6 +153,7 @@ GameObject:
   - component: {fileID: 102103518}
   - component: {fileID: 102103519}
   - component: {fileID: 102103520}
+  - component: {fileID: 102103521}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -218,7 +219,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 63
     y: 70
-    width: 110.8
+    width: 111
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -245,6 +246,7 @@ MonoBehaviour:
   - {fileID: 102103505}
   - {fileID: 102103504}
   - {fileID: 102103518}
+  - {fileID: 102103521}
   suppressAllAutoSelections: 0
 --- !u!114 &102103501
 MonoBehaviour:
@@ -259,11 +261,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 225.05573, y: 665.7686}
+  scrollPos: {x: 424, y: 187}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.25
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -273,7 +275,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 102103500}
   selectedCommands:
-  - {fileID: 102103520}
+  - {fileID: 102103521}
   variables: []
   description: 
   stepPause: 0
@@ -646,7 +648,7 @@ MonoBehaviour:
   fadeTweenType: 4
 --- !u!114 &102103519
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -673,7 +675,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &102103520
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -698,6 +700,25 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &102103521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102103496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d03ae0919f04264b018681ed534177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 22
+  indentLevel: 0
+  _sceneName:
+    stringRef: {fileID: 0}
+    stringVal: Part1
+  loadingImage: {fileID: 0}
+  sceneNameOLD: 
 --- !u!1 &220207108
 GameObject:
   m_ObjectHideFlags: 1

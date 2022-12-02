@@ -14,17 +14,29 @@ public class FoodArea : MonoBehaviour
     public GameObject capsuleSlot;
     public GameObject capsulePrefab;
 
+
+    public List<GameObject> foodPrefabs;
+    public float foodGenerateCD;
+    public GameObject startingPoint;
+    public float timeCD;
     
-    // Start is called before the first frame update
-    void Start()
+    public GameObject RandomFoodGenerator()
     {
-        
+        GameObject comingFood = Instantiate(foodPrefabs[Random.Range(0, foodPrefabs.Count)]);
+
+        return comingFood;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isSquareOut)
+        timeCD += Time.deltaTime;
+        if(timeCD > foodGenerateCD)
+        {
+            timeCD = 0;
+            GenerateFood(RandomFoodGenerator(), startingPoint);
+        }
+/*        if (isSquareOut)
         {
             isSquareOut = false;
             GenerateFood(squarePrefab,squareSlot);
@@ -40,12 +52,11 @@ public class FoodArea : MonoBehaviour
         {
             isCapsuleOut = false;
             GenerateFood(capsulePrefab, capsuleSlot);
-        }
+        }*/
     }
 
-    public void GenerateFood(GameObject foodPrefab,GameObject slot)
+    public void GenerateFood(GameObject food,GameObject slot)
     {
-        GameObject food = Instantiate(foodPrefab);
         food.transform.SetParent(slot.transform);
         food.transform.localPosition = Vector3.zero;
     }

@@ -2143,7 +2143,7 @@ MonoBehaviour:
   - {fileID: 5284517755160319960, guid: 18f40463100703045ab730149170cbcf, type: 3}
   - {fileID: 2018365559422172980, guid: f5454930d81738d43bde01b7cf9dc79a, type: 3}
   - {fileID: 6209818343923557705, guid: 4732bbdaf76aa57419d66f69bf4905bd, type: 3}
-  foodGenerateCD: 4
+  foodGenerateCD: 0.4
   startingPoint: {fileID: 2027155734}
   timeCD: 4
 --- !u!1 &1936696810
@@ -2190,6 +2190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c325263f271dc74381f773fae6411d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fungusM: {fileID: 0}
 --- !u!1001 &2026194068
 PrefabInstance:
   m_ObjectHideFlags: 0

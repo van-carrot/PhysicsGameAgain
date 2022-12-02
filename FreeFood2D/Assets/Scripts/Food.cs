@@ -15,6 +15,10 @@ public class Food : MonoBehaviour
     public bool isMoving = true;
     public float spd;
 
+    private void Start()
+    {
+        spd = 10;
+    }
     private void OnMouseDrag()
     {
         isMoving = false;

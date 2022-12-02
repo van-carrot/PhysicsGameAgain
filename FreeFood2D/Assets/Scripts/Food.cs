@@ -13,7 +13,9 @@ public class Food : MonoBehaviour
     public Vector3 gap;
     public FoodType type;
     public bool isMoving = true;
+    public bool isReleasing;
     public float spd;
+    public bool isInBowl;
 
     private void Start()
     {
@@ -29,6 +31,8 @@ public class Food : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().gravityScale = 1;
         GetComponent<PolygonCollider2D>().isTrigger = false;
+        GoalManager.Instance.foodAmount += 1;
+        isReleasing = true;
 
         //ResetFoodArea();
     }
@@ -72,6 +76,32 @@ public class Food : MonoBehaviour
             Debug.Log("bowl");
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (isReleasing)
+        {
+            if (collision.tag == "Baseline")
+            {
+                GoalManager.Instance.foodAmount -= 1;
+            }
+        }
+
+    }
+
+    /*    private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (!isInBowl)
+            {
+                isInBowl = true;
+
+                if (collision.collider.tag == "Bowl")
+                {
+                    GoalManager.Instance.foodAmount += 1;
+                }
+            }
+
+        }*/
 
     private void FixedUpdate()
     {

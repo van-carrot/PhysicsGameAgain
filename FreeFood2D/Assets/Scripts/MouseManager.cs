@@ -6,21 +6,20 @@ public class MouseManager : MonoBehaviour
 {
     public GameObject targetObject;
 
-    static MouseManager instance;
+    public static MouseManager Instance;
 
-    public static MouseManager Instance
+    private void Awake()
     {
-        get
+        if (Instance == null)
         {
-            if(instance == null)
-            {
-                instance = new MouseManager();
-            }
-
-            return instance;
+            Instance = this;
         }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
     }
-
 
     public void DragByTheMouse(GameObject target, Vector3 gap)
     {

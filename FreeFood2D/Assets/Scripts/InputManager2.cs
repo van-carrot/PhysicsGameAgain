@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputManager2 : MonoBehaviour
 {
     public GameObject foodPlate;
-    public float maganitude;
+    public float magnitude;
     public Vector3 forceRightPos;
     public Vector3 forceRightVec;
     public Vector3 forceLeftVec;
@@ -15,7 +15,7 @@ public class InputManager2 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             //foodPlate.GetComponent<Transform>().Rotate(Vector3.forward, rotateAngle);
 
@@ -23,12 +23,12 @@ public class InputManager2 : MonoBehaviour
             //Rotation Bowl
             //foodPlate.GetComponent<Rigidbody2D>().AddForceAtPosition(forceLeftVec * maganitude, forceLeftPos);
 
-            float currentMag = maganitude;
+            float currentMag = magnitude;
 
 
             if (foodPlate.GetComponent<Rigidbody2D>().velocity.x < 0)
             {
-                currentMag = maganitude * 2;
+                currentMag = magnitude * 2;
             }
 
             //Horizontally Move from left to right
@@ -38,13 +38,13 @@ public class InputManager2 : MonoBehaviour
             //foodPlate.transform.position += Vector3.left * spd * Time.deltaTime;
 
         }
-        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            float currentMag = maganitude;
+            float currentMag = magnitude;
 
             if(foodPlate.GetComponent<Rigidbody2D>().velocity.x > 0)
             {
-                currentMag = maganitude * 2;
+                currentMag = magnitude * 2;
             }
 
             //Rotation Bowl

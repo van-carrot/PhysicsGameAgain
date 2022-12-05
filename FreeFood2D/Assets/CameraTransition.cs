@@ -11,6 +11,7 @@ public class CameraTransition : MonoBehaviour
     private bool cameraTrigger;
     private bool timeEnd;
     public GameObject TimeManager;
+    public bool lerpFinished;
     Vector3 startPos;
     Vector3 endPos;
 
@@ -52,6 +53,10 @@ public class CameraTransition : MonoBehaviour
                                       -9.45f);
                 timeElapsed += Time.deltaTime;
 
+            }
+            if (timeElapsed > lerpDuration)
+            {
+                lerpFinished = true;
             }
 
         }

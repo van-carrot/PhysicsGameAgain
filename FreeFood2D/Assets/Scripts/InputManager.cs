@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.D))
         {
             balanceBoard.useMotor = true;
 
@@ -37,7 +37,7 @@ public class InputManager : MonoBehaviour
             //foodPlate.transform.position += Vector3.left * spd * Time.deltaTime;
 
         }
-        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.A))
         {
             balanceBoard.useMotor = true;
             JointMotor2D motor = new JointMotor2D { motorSpeed = -magnitude, maxMotorTorque = 10000 };

@@ -9,6 +9,8 @@ public class CameraTransition : MonoBehaviour
     public float lerpDuration;
     public float desiredSize;
     private bool cameraTrigger;
+    private bool timeEnd;
+    public GameObject TimeManager;
     Vector3 startPos;
     Vector3 endPos;
 
@@ -25,7 +27,10 @@ public class CameraTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.P))
+        TimeCountdown externalTime = TimeManager.GetComponent<TimeCountdown>();
+        timeEnd = externalTime.timeEnd;
+
+        if (timeEnd)
         {
             cameraTrigger = true;
 

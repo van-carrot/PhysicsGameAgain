@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class TimeCountdown : MonoBehaviour
+{
+    public TextMeshProUGUI timerText;
+
+    public float countdownTime;
+
+    public bool timeEnd;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        timerText.text = "start";
+        countdownTime = 20;
+        timeEnd = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        countdownTime -= Time.deltaTime;
+
+        timerText.text = "Time: " + (int)countdownTime;
+
+        if (countdownTime <= 0)
+        {
+            timeEnd = true;
+            timerText.text = " ";
+        }
+
+    }
+}

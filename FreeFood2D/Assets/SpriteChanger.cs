@@ -34,7 +34,7 @@ public class SpriteChanger : MonoBehaviour
             if (randomizer == 2)
             {
                 spriteRenderer.sprite = spriteArray[1];
-                timeforturn = 0;
+                
             }
         }
        

@@ -3433,6 +3433,13 @@ MonoBehaviour:
   - {fileID: 5284517755160319960, guid: 18f40463100703045ab730149170cbcf, type: 3}
   - {fileID: 2018365559422172980, guid: f5454930d81738d43bde01b7cf9dc79a, type: 3}
   - {fileID: 6209818343923557705, guid: 4732bbdaf76aa57419d66f69bf4905bd, type: 3}
+  - {fileID: 8410624798904468936, guid: 4a4ff13b2dbb5fb43b5407fd6669d50f, type: 3}
+  - {fileID: 6221769361231614928, guid: ffff180fd5599f14d8a8ce28f9a07acb, type: 3}
+  - {fileID: 2421852060561001596, guid: 04d26a38c7f56d84ea8761616cd833df, type: 3}
+  - {fileID: 1091728033141435511, guid: b8ee7d74b83248640bf0aa2c8712338a, type: 3}
+  - {fileID: 1860062332630422289, guid: c89dca1a3b6a45945800e533690b8aa4, type: 3}
+  - {fileID: 5199999401515391915, guid: 5c9ce13c32b171c4d9d2474d9427f658, type: 3}
+  - {fileID: 6986185424045778217, guid: 83ba219f5bca33f4993ac3ea3a411c5f, type: 3}
   foodGenerateCD: 0.4
   startingPoint: {fileID: 2027155734}
   timeCD: 4

@@ -31,7 +31,10 @@ public class Food : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().gravityScale = 1;
         GetComponent<PolygonCollider2D>().isTrigger = false;
-        GoalManager.Instance.foodAmount += 1;
+        if (!isReleasing)
+        {
+            GoalManager.Instance.foodAmount += 1;
+        }
         isReleasing = true;
 
         //ResetFoodArea();

@@ -5,13 +5,15 @@ using UnityEngine;
 public class InputScriptManager : MonoBehaviour
 {
     public GameObject camManager;
+    public GameObject foodPlate;
     public bool secondPhase;
+    private Rigidbody2D foodRb;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        foodRb = foodPlate.GetComponent<Rigidbody2D>();
 
     }
 
@@ -24,6 +26,7 @@ public class InputScriptManager : MonoBehaviour
         if (secondPhase)
         {
             gameObject.GetComponent<InputManager2>().enabled = true;
+            foodRb.constraints = RigidbodyConstraints2D.FreezePositionY;
         }
     }
 }

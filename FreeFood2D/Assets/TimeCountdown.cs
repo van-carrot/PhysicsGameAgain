@@ -7,6 +7,9 @@ public class TimeCountdown : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
 
+    public GameObject foodAreaManager;
+    private FoodArea foodAreaScript;
+
     public float countdownTime;
 
     public bool timeEnd;
@@ -17,6 +20,8 @@ public class TimeCountdown : MonoBehaviour
         timerText.text = "start";
         countdownTime = 20;
         timeEnd = false;
+        foodAreaScript = foodAreaManager.GetComponent<FoodArea>();
+        
     }
 
     // Update is called once per frame
@@ -30,6 +35,7 @@ public class TimeCountdown : MonoBehaviour
         {
             timeEnd = true;
             timerText.text = " ";
+            foodAreaScript.enabled = false;
         }
 
     }

@@ -224,9 +224,7 @@ GameObject:
   - component: {fileID: 102103506}
   - component: {fileID: 102103505}
   - component: {fileID: 102103504}
-  - component: {fileID: 102103508}
   - component: {fileID: 102103509}
-  - component: {fileID: 102103510}
   - component: {fileID: 102103511}
   - component: {fileID: 102103513}
   - component: {fileID: 102103512}
@@ -312,8 +310,6 @@ MonoBehaviour:
   eventHandler: {fileID: 102103499}
   commandList:
   - {fileID: 102103509}
-  - {fileID: 102103508}
-  - {fileID: 102103510}
   - {fileID: 102103517}
   - {fileID: 102103513}
   - {fileID: 102103516}
@@ -358,7 +354,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 102103500}
   selectedCommands:
-  - {fileID: 102103521}
+  - {fileID: 102103517}
   variables: []
   description: 
   stepPause: 0
@@ -522,24 +518,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &102103508
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102103496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1902400ccc99b45d69ad01cb86b57d0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 8
-  indentLevel: 0
-  musicClip: {fileID: 8300000, guid: dfc37eb4a35efdc4997974296da90fb7, type: 3}
-  atTime: 0
-  loop: 1
-  fadeDuration: 1
 --- !u!114 &102103509
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -565,23 +543,6 @@ MonoBehaviour:
   orthoSizeTweenType: 4
   posTweenType: 4
   rotTweenType: 4
---- !u!114 &102103510
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 102103496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4015e84616cc45cfb498561373899d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 10
-  indentLevel: 0
-  volume: 1
-  fadeDuration: 2.4
-  waitUntilFinished: 0
 --- !u!114 &102103511
 MonoBehaviour:
   m_ObjectHideFlags: 2

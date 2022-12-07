@@ -34,6 +34,7 @@ public class TimeCountdown : MonoBehaviour
         if (countdownTime <= 0)
         {
             timeEnd = true;
+            GoalManager.Instance.CheckFailure();
             timerText.text = " ";
             foodAreaScript.enabled = false;
         }

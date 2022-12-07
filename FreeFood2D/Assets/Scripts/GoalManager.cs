@@ -8,6 +8,9 @@ public class GoalManager : MonoBehaviour
 
     public int foodAmount;
 
+    public GameObject endScreen;
+    public bool isFailed = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -19,5 +22,14 @@ public class GoalManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void CheckFailure()
+    {
+        if(foodAmount < 0)
+        {
+            isFailed = true;
+            endScreen.SetActive(true); ;
+        }
     }
 }

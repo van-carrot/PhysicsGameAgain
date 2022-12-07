@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneManager : MonoBehaviour
+public class SceneManagers : MonoBehaviour
 {
     public GameObject fungusM;
     private void Start()

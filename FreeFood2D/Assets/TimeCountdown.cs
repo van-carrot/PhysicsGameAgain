@@ -18,7 +18,7 @@ public class TimeCountdown : MonoBehaviour
     void Start()
     {
         timerText.text = "start";
-        countdownTime = 20;
+        countdownTime = 3;
         timeEnd = false;
         foodAreaScript = foodAreaManager.GetComponent<FoodArea>();
         

@@ -29,7 +29,7 @@ public class GoalManager : MonoBehaviour
         if(foodAmount < 0)
         {
             isFailed = true;
-            endScreen.SetActive(true); ;
+            endScreen.SetActive(true);
         }
     }
 }

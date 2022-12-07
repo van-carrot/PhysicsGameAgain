@@ -8,12 +8,13 @@ public class CameraTransition : MonoBehaviour
     float timeElapsed;
     public float lerpDuration;
     public float desiredSize;
-    private bool cameraTrigger;
+    public bool cameraTrigger;
     private bool timeEnd;
     public GameObject TimeManager;
     public bool lerpFinished;
     Vector3 startPos;
     Vector3 endPos;
+    public float timeDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -43,20 +44,26 @@ public class CameraTransition : MonoBehaviour
     {
         if (cameraTrigger)
         {
-            if (timeElapsed < lerpDuration)
-            {
+            timeDelay += Time.deltaTime;
 
-                cam.orthographicSize = Mathf.Lerp(5, desiredSize, timeElapsed / lerpDuration);
-                cam.transform.position = new Vector3(
-                                     Mathf.Lerp(startPos.x, endPos.x, timeElapsed / lerpDuration),
-                                     Mathf.Lerp(startPos.y, endPos.y, timeElapsed / lerpDuration),
-                                      -9.45f);
-                timeElapsed += Time.deltaTime;
-
-            }
-            if (timeElapsed > lerpDuration)
+            if (timeDelay >= 2)
             {
-                lerpFinished = true;
+                if (timeElapsed < lerpDuration)
+                {
+
+                    cam.orthographicSize = Mathf.Lerp(5, desiredSize, timeElapsed / lerpDuration);
+                    cam.transform.position = new Vector3(
+                                         Mathf.Lerp(startPos.x, endPos.x, timeElapsed / lerpDuration),
+                                         Mathf.Lerp(startPos.y, endPos.y, timeElapsed / lerpDuration),
+                                          -9.45f);
+                    timeElapsed += Time.deltaTime;
+
+                }
+                if (timeElapsed > lerpDuration)
+                {
+                    lerpFinished = true;
+                }
+
             }
 
         }

@@ -26,7 +26,7 @@ public class GoalManager : MonoBehaviour
 
     public void CheckFailure()
     {
-        if(foodAmount < 0)
+        if (foodAmount < 0)
         {
             isFailed = true;
             endScreen.SetActive(true);

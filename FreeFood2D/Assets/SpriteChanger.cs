@@ -24,6 +24,7 @@ public class SpriteChanger : MonoBehaviour
 
     public GameObject careful;
     public GameObject caught;
+    public GameObject inputManager;
 
     
     // Start is called before the first frame update
@@ -37,6 +38,7 @@ public class SpriteChanger : MonoBehaviour
         isBase = true;
         randomizerRan = false;
         playerRb = player.GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -48,8 +50,8 @@ public class SpriteChanger : MonoBehaviour
         {
             spriteRenderer.sprite = spriteArray[0];
             careful.SetActive(false);
-            caught.SetActive(false);
         }
+
         if (isChecking)
         {
             spriteRenderer.sprite = spriteArray[1];
@@ -64,6 +66,13 @@ public class SpriteChanger : MonoBehaviour
             if (playerVel >= 1)
             {
                 caught.SetActive(true);
+                InputManager2 playercontrol = inputManager.GetComponent<InputManager2>();
+                InputScriptManager ism = inputManager.GetComponent<InputScriptManager>();
+                InputManager bowlcontrol = inputManager.GetComponent<InputManager>();
+                bowlcontrol.enabled = false;
+                ism.enabled = false;
+                playercontrol.enabled = false;
+
             }
             
 
